@@ -1,4 +1,5 @@
 # Tessera: The Autonomous Financial Infrastructure for the DeFi 4.0 Era
+[![License: AGPL-3.0](https://img.shields.io/badge/License-AGPL--3.0-blue.svg)](https://opensource.org/licenses/AGPL-3.0)
 
 ## 1. Vision & Architecture
 
