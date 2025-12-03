@@ -1,0 +1,19 @@
+// SPDX-License-Identifier: MIT
+
+
+pragma solidity ^0.8.20;
+
+import {ERC721} from "../ERC721.sol";
+import {Pausable} from "../../../utils/Pausable.sol";
+
+
+abstract contract ERC721Pausable is ERC721, Pausable {
+    
+    function _update(
+        address to,
+        uint256 tokenId,
+        address auth
+    ) internal virtual override whenNotPaused returns (address) {
+        return super._update(to, tokenId, auth);
+    }
+}

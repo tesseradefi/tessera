@@ -1,0 +1,20 @@
+// SPDX-License-Identifier: MIT
+
+
+pragma solidity ^0.8.20;
+
+import {ERC1155} from "../ERC1155.sol";
+import {Pausable} from "../../../utils/Pausable.sol";
+
+
+abstract contract ERC1155Pausable is ERC1155, Pausable {
+    
+    function _update(
+        address from,
+        address to,
+        uint256[] memory ids,
+        uint256[] memory values
+    ) internal virtual override whenNotPaused {
+        super._update(from, to, ids, values);
+    }
+}
