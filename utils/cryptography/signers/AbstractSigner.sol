@@ -1,0 +1,10 @@
+// SPDX-License-Identifier: MIT
+
+
+pragma solidity ^0.8.20;
+
+
+abstract contract AbstractSigner {
+    
+    function _rawSignatureValidation(bytes32 hash, bytes calldata signature) internal view virtual returns (bool);
+}

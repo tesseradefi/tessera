@@ -1,0 +1,19 @@
+// SPDX-License-Identifier: MIT
+
+
+pragma solidity ^0.8.20;
+
+
+library Errors {
+    
+    error InsufficientBalance(uint256 balance, uint256 needed);
+
+    
+    error FailedCall();
+
+    
+    error FailedDeployment();
+
+    
+    error MissingPrecompile(address);
+}

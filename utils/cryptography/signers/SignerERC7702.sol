@@ -1,0 +1,19 @@
+// SPDX-License-Identifier: MIT
+
+
+pragma solidity ^0.8.20;
+
+import {AbstractSigner} from "./AbstractSigner.sol";
+import {ECDSA} from "../ECDSA.sol";
+
+
+abstract contract SignerERC7702 is AbstractSigner {
+    
+    function _rawSignatureValidation(
+        bytes32 hash,
+        bytes calldata signature
+    ) internal view virtual override returns (bool) {
+        (address recovered, ECDSA.RecoverError err, ) = ECDSA.tryRecover(hash, signature);
+        return address(this) == recovered && err == ECDSA.RecoverError.NoError;
+    }
+}
